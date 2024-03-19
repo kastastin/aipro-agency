@@ -1,11 +1,21 @@
-import HeroSection from "@/components/Hero";
-import ServicesSection from "@/components/Services";
+import HeroSection from "@/components/sections/Hero";
+import ServicesSection from "@/components/sections/Services";
+import UniquenessSection from "@/components/sections/Uniqueness";
+import StagesSection from "@/components/sections/Stages";
+import PricingSection from "@/components/sections/Pricing";
+import ReviewsSection from "@/components/sections/Reviews";
+import FaqSection from "@/components/sections/Faq";
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
       <ServicesSection />
+      <UniquenessSection />
+      <StagesSection />
+      <PricingSection />
+      <ReviewsSection />
+      <FaqSection />
     </>
   );
 }

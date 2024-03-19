@@ -2,12 +2,30 @@
 
 import Image from "next/image";
 
-export default function ScrollButton({ text, scrollInto: sectionId }) {
+export default function ScrollButton({ text, scrollInto: sectionId, variant }) {
   function buttonHandler() {
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
       sectionElement.scrollIntoView({ behavior: "smooth" });
     }
+  }
+
+  if (variant === "secondary") {
+    return (
+      <button
+        className="group flex gap-x-4 border-b border-secondary pb-1 font-nunito text-xl uppercase tracking-wide text-secondary transition-colors duration-300 ease-in-out hover:border-primary hover:text-primary"
+        onClick={buttonHandler}
+      >
+        {text}
+        <Image
+          src="/arrow-right-secondary.svg"
+          alt="Right arrow"
+          width={33}
+          height={20}
+          className="translate-y-[2px] transition-transform duration-500 ease-in-out group-hover:rotate-180 group-hover:brightness-[10]"
+        />
+      </button>
+    );
   }
 
   return (

@@ -20,6 +20,7 @@ module.exports = {
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
         nunito: ["Nunito Sans", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
       },
       colors: {
         white: "hsl(var(--white))",
