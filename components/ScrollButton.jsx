@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 
-export default function ScrollButton({ text, scrollInto: sectionId, variant }) {
+export default function ScrollButton({
+  text,
+  scrollInto: sectionId,
+  variant,
+  isSubmit,
+}) {
   function buttonHandler() {
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
@@ -30,8 +35,14 @@ export default function ScrollButton({ text, scrollInto: sectionId, variant }) {
 
   return (
     <button
+      type={isSubmit ? "submit" : "button"}
       className="group mx-auto flex h-20 items-center font-nunito text-xl uppercase tracking-wide"
-      onClick={buttonHandler}
+      // onClick={!isSubmit && buttonHandler}
+      onClick={() => {
+        if (!isSubmit) {
+          buttonHandler();
+        }
+      }}
     >
       <span className="duration-300 ease-in-out group-hover:-translate-x-3 group-hover:text-primary">
         {text}

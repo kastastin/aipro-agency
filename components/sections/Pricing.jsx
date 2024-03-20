@@ -27,31 +27,38 @@ export default function PricingSection() {
         />
 
         {/* Section image */}
-        <div className="relative">
+        <div className="relative mx-auto mb-[50px] h-[290px] w-[345px]">
           <Image
             src="/pricing/joke.jpg"
             alt="Local joke about pricing"
-            width={345}
-            height={290}
-            className="mt-[35px]"
+            fill
+            className="relative mt-[35px]"
           />
+
+          <span className="absolute right-[50px] top-[80px] w-[75px] text-center text-sm font-black uppercase leading-[17px] tracking-wider">
+            Другие агенции
+          </span>
+
+          <span className="absolute bottom-[15px] left-[40px] text-center text-sm font-black uppercase leading-[17px] tracking-wider">
+            Ваш бюджет
+          </span>
 
           {/* Stone top */}
           <Image
             src="/pricing/stone-top.png"
             alt="Local joke about pricing"
-            width={30}
-            height={50}
-            className="absolute -top-6 right-1"
+            width={55}
+            height={80}
+            className="absolute -right-[5px] top-[10px] -rotate-[30deg]"
           />
 
           {/* Stone bottom */}
           <Image
             src="/pricing/stone-bottom.png"
             alt="Local joke about pricing"
-            width={40}
-            height={57}
-            className="absolute -bottom-6 left-2 rotate-[20deg]"
+            width={60}
+            height={67}
+            className="absolute -bottom-[62px] left-[5px] -rotate-[210deg]"
           />
         </div>
       </div>
