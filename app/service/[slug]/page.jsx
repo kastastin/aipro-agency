@@ -14,10 +14,11 @@ export default function ServicePage({ params }) {
   if (!service) return notFound();
 
   return (
-    <section className="py-[85px]">
+    <section className="overflow-hidden py-[85px]">
       <div className="container mx-auto">
         <h1 className="h2 mb-[20px]">{service.name}</h1>
         <p className="text-sm">{service.description}</p>
+
         {/* Types */}
         <ul className="my-[50px] space-y-[20px]">
           {service.types.map((type, index) => (
@@ -26,16 +27,17 @@ export default function ServicePage({ params }) {
             </li>
           ))}
         </ul>
+
         {/* Section image */}
-        <div className="relative mb-[40px]">
-          <div className="relative h-[195px] w-[345px] overflow-hidden">
-            <Image
-              src={service.imageSrc}
-              alt={service.name}
-              fill
-              className="scale-[1.1] object-cover"
-            />
-          </div>
+        <div className="relative mx-auto mb-[40px]">
+          <Image
+            src={service.imageSrc}
+            alt={service.name}
+            width={345}
+            height={195}
+            layout="responsive"
+            className="object-content"
+          />
 
           <Image
             src="/services/stone-top.png"

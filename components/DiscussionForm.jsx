@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
+
 import ScrollButton from "./ScrollButton";
 import { services } from "@/app/service/data";
 
@@ -92,8 +93,6 @@ export default function DiscussionForm() {
       checked: checkedValues,
     };
 
-    console.log(inputsWithChecked);
-
     try {
       const response = await fetch("/api/sendMessage", {
         method: "POST",
@@ -133,8 +132,8 @@ export default function DiscussionForm() {
             <li key={index} className="flex items-center gap-x-[20px]">
               <Checkbox
                 id={`check-${index + 1}`}
-                checked={checkboxStates[index]}
                 value={service.value}
+                checked={checkboxStates[index]}
                 onCheckedChange={handleCheckboxChange(index)}
               />
 

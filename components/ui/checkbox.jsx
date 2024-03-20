@@ -13,7 +13,7 @@ const Checkbox = React.forwardRef(
       checked={checked}
       onCheckedChange={onCheckedChange}
       className={cn(
-        "peer size-[32px] shrink-0 border-2 border-white ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-2 data-[state=checked]:bg-transparent data-[state=checked]:text-primary",
+        "peer size-[32px] shrink-0 border-2 border-white ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-2 data-[state=checked]:bg-transparent data-[state=checked]:border-primary data-[state=checked]:text-primary",
         className,
       )}
       {...props}

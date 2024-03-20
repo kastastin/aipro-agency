@@ -50,36 +50,18 @@ export default function MenuContent({ onClose }) {
           </Collapsible>
         </li>
 
-        <li className="menu-list-item">
+        <li className="menu-list-item w-min">
           <Link href="https://www.google.com/">Отзывы</Link>
         </li>
 
-        <li className="menu-list-item">
+        <li className="menu-list-item w-min">
           <Link href="https://www.google.com/">FAQ</Link>
         </li>
 
-        <li className="menu-list-item">
+        <li className="menu-list-item w-min">
           <Link href="https://www.google.com/">Контакты</Link>
         </li>
       </ul>
     </div>
   );
-
-  // return (
-  //   <>
-  //     <Logo className="absolute left-4 top-[16px]" onClick={onClose} />
-
-  //     <ul className="mt-[56px] space-y-[30px]">
-  //       {menuItems.map((item, index) => {
-  //         return (
-  //           <li key={index}>
-  //             <span className="cursor-pointer font-nunito text-[32px] font-extralight leading-none">
-  //               {item}
-  //             </span>
-  //           </li>
-  //         );
-  //       })}
-  //     </ul>
-  //   </>
-  // );
 }
