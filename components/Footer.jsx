@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="py-[20px]">
       <div className="container mx-auto">
-        <h2 className="h2 mb-[50px]">Контактная информация</h2>
+        <h2 className="h2 mb-[50px] lg:w-[570px]">Контактная информация</h2>
 
         {/* Socials */}
         <ul className="space-y-[30px]">
@@ -100,10 +100,10 @@ export default function Footer() {
 
         {/* Policies */}
         <div className="flex justify-between">
-          <span className="cursor-pointer text-[10px] hover:underline">
+          <span className="cursor-pointer text-mini hover:underline">
             Политика конфиденциальности
           </span>
-          <span className="cursor-pointer text-[10px] hover:underline">
+          <span className="cursor-pointer text-mini hover:underline">
             Копирайтинг 2024
           </span>
         </div>

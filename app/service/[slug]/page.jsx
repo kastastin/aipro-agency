@@ -17,13 +17,13 @@ export default function ServicePage({ params }) {
     <section className="overflow-hidden py-[85px]">
       <div className="container mx-auto">
         <h1 className="h2 mb-[20px]">{service.name}</h1>
-        <p className="text-sm">{service.description}</p>
+        <p className="p">{service.description}</p>
 
         {/* Types */}
         <ul className="my-[50px] space-y-[20px]">
           {service.types.map((type, index) => (
             <li key={index}>
-              <span className="text-xl">{type}</span>
+              <span className="text-xl lg:text-2xl">{type}</span>
             </li>
           ))}
         </ul>
@@ -56,13 +56,13 @@ export default function ServicePage({ params }) {
           />
         </div>
 
-        <p className="text-sm">{service.conclusion}</p>
+        <p className="p">{service.conclusion}</p>
 
         <h2 className="h2 mb-[50px] mt-[100px]">
           Давайте <span className="text-primary">обсудим</span> задачу
         </h2>
 
-        <p className="mb-[50px] text-sm">
+        <p className="p mb-[50px]">
           Заполните контактную форму, чтобы раскрыть свои потребности и цели,
           получив бесплатную консультацию с 10% скидкой на все услуги AiPro
           Agency.

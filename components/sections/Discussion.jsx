@@ -12,7 +12,7 @@ export default function DiscussionSection() {
           Давайте <span className="text-primary">обсудим</span> задачу
         </h2>
 
-        <p className="mb-[50px] text-sm">
+        <p className="p mb-[50px]">
           Заполните контактную форму, чтобы раскрыть свои потребности и цели,
           получив бесплатную консультацию с 10% скидкой на все услуги AiPro
           Agency.

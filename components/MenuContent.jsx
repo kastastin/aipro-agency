@@ -20,10 +20,14 @@ export default function MenuContent({ onClose }) {
       <Logo className="absolute left-4 top-[16px]" onClick={onClose} />
 
       <ul className="mt-[80px] space-y-[20px] pl-4">
-        <li className="menu-list-item">
-          <Collapsible open={isCollapsibled} onOpenChange={setisCollapsibled}>
+        <li className="menu-list-item inline">
+          <Collapsible
+            open={isCollapsibled}
+            onOpenChange={setisCollapsibled}
+            className="inline"
+          >
             <span
-              className="relative pr-6"
+              className="relative w-min pr-6"
               onClick={() => setisCollapsibled(!isCollapsibled)}
             >
               Услуги
@@ -36,8 +40,8 @@ export default function MenuContent({ onClose }) {
               />
             </span>
 
-            <CollapsibleContent className="collapsible-content mt-[20px]">
-              <ul className="space-y-[10px]">
+            <CollapsibleContent className="collapsible-content mt-[20px] cursor-default">
+              <ul className="flex flex-col items-start space-y-[10px]">
                 {services.map((service, index) => (
                   <li key={index} className="text-base">
                     <Link href={`${service.path}`} onClick={onClose}>

@@ -27,7 +27,6 @@
 
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
@@ -56,11 +55,19 @@
 }
 
 .h2 {
-  @apply font-nunito text-3xl font-black uppercase;
+  @apply font-nunito text-3xl font-black uppercase md:text-4xl lg:text-6xl;
 }
 
 .h3 {
   @apply text-xl uppercase;
+}
+
+.p {
+  @apply text-sm sm:text-base lg:text-lg;
+}
+
+.text-mini {
+  @apply text-[10px] sm:text-sm;
 }
 
 .text-stroke {
