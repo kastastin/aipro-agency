@@ -9,14 +9,25 @@ module.exports = {
   ],
   prefix: "",
   theme: {
+    screens: {
+      xs: "395px",
+      sm: "575px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1400px",
+      "3xl": "1600px",
+      "4xl": "1920px",
+    },
     container: {
       center: true,
       padding: {
         DEFAULT: "1rem",
-        sm: "2rem",
+        sm: "1rem",
         lg: "4rem",
         xl: "5rem",
         "2xl": "6rem",
+        "3xl": "10rem",
       },
       screens: {
         sm: "640px",
@@ -24,6 +35,11 @@ module.exports = {
         lg: "1024px",
         xl: "1280px",
         "2xl": "1400px",
+        "3xl": "1600px",
+        "4xl": "1920px",
+      },
+      width: {
+        "4xl": "1600px",
       },
     },
     extend: {
@@ -85,7 +101,7 @@ module.exports = {
       },
       backgroundSize: {
         130: "130%",
-        150: "150%",
+        90: "90%",
       },
       backgroundPosition: {
         "right-10rem": "right 10rem center",

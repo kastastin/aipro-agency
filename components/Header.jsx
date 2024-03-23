@@ -4,7 +4,11 @@ import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
 import Logo from "@/components/Logo";
-import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+} from "@/components/ui/sheet";
 import MenuContent from "./MenuContent";
 
 export default function Header() {

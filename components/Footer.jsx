@@ -74,7 +74,7 @@ export default function Footer() {
           </div>
 
           {/* Pages */}
-          <ul className="xl:place-center col-span-full mx-auto flex justify-between py-[50px] xl:col-start-1 xl:w-[460px] xl:py-[80px]">
+          <ul className="xl:place-center col-span-full mx-auto flex w-full justify-between py-[50px] sm:w-[60%] xl:col-start-1 xl:w-[460px] xl:py-[80px]">
             <li>
               <Link href="#" className="text-2xl uppercase hover:underline">
                 Услуги

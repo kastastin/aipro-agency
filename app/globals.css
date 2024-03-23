@@ -51,7 +51,7 @@
 }
 
 .h1 {
-  @apply font-roboto text-[2.5rem] font-black uppercase leading-[40px] tracking-wider;
+  @apply xs:text-[35px] xs:leading-[45px] font-roboto text-[40px] font-black uppercase leading-[40px] tracking-wider sm:text-[50px] sm:leading-[50px] xl:text-[100px] xl:leading-[120px];
 }
 
 .h2 {
@@ -71,12 +71,12 @@
 }
 
 .menu-link {
-  @apply sm:text-4xl;
+  @apply 3xl:text-6xl sm:text-4xl;
 }
 
 .text-stroke {
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1.5px rgb(149, 41, 170);
+  -webkit-text-stroke: 2px rgb(149, 41, 170);
 }
 
 .text-stroke-white {
