@@ -39,21 +39,40 @@ const faqs = [
 ];
 
 export default function FaqSection() {
+  const half = Math.ceil(faqs.length / 2);
+  const firstHalf = faqs.slice(0, half);
+  const secondHalf = faqs.slice(half, faqs.length);
+
   return (
     <section className="relative overflow-hidden pb-[80px] pt-[50px]">
       <div className="container mx-auto">
-        <h2 className="h2 w-[310px]">
+        <h2 className="h2 w-[310px] md:w-[390px] lg:w-[70%] xl:w-[55%]">
           <span className="text-primary">Частые вопросы</span> к AiPro
         </h2>
 
-        <Accordion type="single" collapsible>
-          {faqs.map((faq, index) => (
-            <AccordionItem value={index + 1} key={index}>
-              <AccordionTrigger>{faq.question}</AccordionTrigger>
-              <AccordionContent>{faq.answer}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <div className="flex flex-wrap justify-between">
+          <div className="w-full lg:w-[45%]">
+            <Accordion type="single" collapsible>
+              {firstHalf.map((faq, index) => (
+                <AccordionItem key={index} value={index + 1}>
+                  <AccordionTrigger>{faq.question}</AccordionTrigger>
+                  <AccordionContent>{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+
+          <div className="w-full lg:w-[45%]">
+            <Accordion type="single" collapsible>
+              {secondHalf.map((faq, index) => (
+                <AccordionItem key={index} value={index + half + 1}>
+                  <AccordionTrigger>{faq.question}</AccordionTrigger>
+                  <AccordionContent>{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
 
         {/* Stone top */}
         <Image

@@ -17,12 +17,12 @@ export default function StagesSection() {
   return (
     <section className="overflow-hidden pb-[50px] pt-[90px]">
       <div className="container mx-auto">
-        <h2 className="h2 mb-[50px]">
+        <h2 className="h2 mb-[50px] xl:w-[1000px]">
           <span className="text-primary">Этапы работы</span> которым следует
           AiPro
         </h2>
 
-        <p className="text-sm">
+        <p className="p md:w-[42%]">
           Процессы работы AiPro над проектами выстроены с учетом всего
           многолетнего опыта агенции.
         </p>
@@ -37,7 +37,9 @@ export default function StagesSection() {
               <span className="w-[80px] text-center font-nunito text-[64px] font-black leading-[64px]">
                 {index + 1}
               </span>
-              <strong className="w-[145px] text-sm font-normal">{stage}</strong>
+              <strong className="w-[145px] text-sm font-normal md:text-xl md:leading-[20px]">
+                {stage}
+              </strong>
             </li>
           ))}
 
@@ -50,11 +52,11 @@ export default function StagesSection() {
             alt="Vergin statue"
             width={700}
             height={1400}
-            className="absolute left-4 top-[40%] -z-10 rotate-6 scale-[2.3] opacity-25"
+            className="absolute left-4 top-[40%] -z-10 rotate-6 scale-[2.3] opacity-25 md:scale-[3]"
           />
         </ul>
 
-        <p className="text-sm">
+        <p className="p md:ml-auto md:w-[50%]">
           В конце каждого этапа работы над проектом AiPro дает вам всю
           информацию о проделанных действиях и согласовывает переход к
           следующему этапу работы.

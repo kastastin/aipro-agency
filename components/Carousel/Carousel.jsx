@@ -1,17 +1,45 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import ClassNames from "embla-carousel-class-names";
 
 import { usePrevNextButtons, Button } from "./EmblaCarouselArrowButtons";
+import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 import "./carousel.css";
 
 export default function Carousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ axis: "y" }, [ClassNames()]);
+  // Get the axis based on the window size (x/y)
+  const [axis, setAxis] = useState(
+    typeof window !== "undefined" &&
+      window.matchMedia("(min-width: 768px)").matches
+      ? "x"
+      : "y",
+  );
 
+  useEffect(() => {
+    const handleResize = () => {
+      setAxis(window.matchMedia("(min-width: 768px)").matches ? "x" : "y");
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Call function initially to set the axis based on the initial window size
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({ axis }, [ClassNames()]);
+
+  // Controls (btns, dots)
   const { nextBtnDisabled, onPrevButtonClick, onNextButtonClick } =
     usePrevNextButtons(emblaApi);
+  const { selectedIndex, scrollSnaps, onDotButtonClick } =
+    useDotButton(emblaApi);
 
   return (
     <div className="embla">
@@ -54,12 +82,25 @@ export default function Carousel() {
           ))}
         </div>
 
-        {/* Control buttons */}
-        {!nextBtnDisabled ? (
+        {/* Control buttons | Vertical (y) */}
+        {axis === "y" && !nextBtnDisabled ? (
           <Button onClick={onNextButtonClick} />
         ) : (
           <Button onClick={onPrevButtonClick} direction="up" />
         )}
+      </div>
+
+      {/* Dots navigation */}
+      <div className="mt-[20px] flex justify-center gap-x-[15px]">
+        {scrollSnaps.map((_, index) => (
+          <DotButton
+            key={index}
+            onClick={() => onDotButtonClick(index)}
+            className={"embla__dot".concat(
+              index === selectedIndex ? " embla__dot--selected" : "",
+            )}
+          />
+        ))}
       </div>
     </div>
   );

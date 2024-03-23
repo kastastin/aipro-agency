@@ -59,7 +59,7 @@
 }
 
 .h3 {
-  @apply text-xl uppercase;
+  @apply text-xl uppercase md:text-2xl;
 }
 
 .p {

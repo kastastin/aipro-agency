@@ -43,7 +43,7 @@ export const Button = (props) => {
 
   return (
     <button
-      className={`absolute bottom-6 left-[50%] -translate-x-[50%] ${directionStyle} cursor-pointer brightness-[10] transition-all duration-300 hover:scale-[1.2]`}
+      className={`md:hidden absolute bottom-6 left-[50%] -translate-x-[50%] ${directionStyle} cursor-pointer brightness-[10] transition-all duration-300 hover:scale-[1.2]`}
       type="button"
       {...restProps}
     >
