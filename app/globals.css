@@ -63,11 +63,15 @@
 }
 
 .p {
-  @apply text-sm sm:text-base lg:text-lg;
+  @apply text-sm sm:text-base lg:text-lg xl:text-xl;
 }
 
 .text-mini {
   @apply text-[10px] sm:text-sm;
+}
+
+.menu-link {
+  @apply sm:text-4xl;
 }
 
 .text-stroke {

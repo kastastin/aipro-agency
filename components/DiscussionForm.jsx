@@ -124,84 +124,93 @@ export default function DiscussionForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-[50px]">
-        <p className="mb-[30px] text-3xl">Хочу обсудить</p>
-        {/* Checkboxes */}
-        <ul className="space-y-[30px]">
-          {servicesData.map((service, index) => (
-            <li key={index} className="flex items-center gap-x-[20px]">
-              <Checkbox
-                id={`check-${index + 1}`}
-                value={service.value}
-                checked={checkboxStates[index]}
-                onCheckedChange={handleCheckboxChange(index)}
-              />
+      <form onSubmit={form.handleSubmit(onSubmit)}>
+        <p className="mb-[30px] text-3xl xl:mb-[50px] xl:text-4xl">
+          Хочу обсудить
+        </p>
 
-              <label
-                className="cursor-pointer text-xl"
-                htmlFor={`check-${index + 1}`}
-              >
-                {service.name}
-              </label>
-            </li>
-          ))}
-        </ul>
+        {/* Grid */}
+        <div className="mb-[50px] grid xl:grid-cols-[330px_1fr] xl:gap-x-[200px]">
+          {/* Checkboxes | Left column */}
+          <ul className="mb-[50px] space-y-[30px] xl:mb-0">
+            {servicesData.map((service, index) => (
+              <li key={index} className="flex items-center gap-x-[20px]">
+                <Checkbox
+                  id={`check-${index + 1}`}
+                  value={service.value}
+                  checked={checkboxStates[index]}
+                  onCheckedChange={handleCheckboxChange(index)}
+                />
 
-        {/* Name */}
-        <FormField
-          name="name"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input placeholder="Имя" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+                <label
+                  className="cursor-pointer text-xl"
+                  htmlFor={`check-${index + 1}`}
+                >
+                  {service.name}
+                </label>
+              </li>
+            ))}
+          </ul>
 
-        {/* Phone */}
-        <FormField
-          name="phone"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input placeholder="Телефон" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+          {/* Right column */}
+          <div className="space-y-[50px] xl:w-full xl:border xl:border-white xl:p-[30px]">
+            {/* Name */}
+            <FormField
+              name="name"
+              control={form.control}
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Input placeholder="Имя" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-        {/* Email */}
-        <FormField
-          name="email"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input placeholder="Почта" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+            {/* Phone */}
+            <FormField
+              name="phone"
+              control={form.control}
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Input placeholder="Телефон" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-        {/* Message */}
-        <FormField
-          name="message"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Textarea placeholder="Сообщение" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+            {/* Email */}
+            <FormField
+              name="email"
+              control={form.control}
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Input placeholder="Почта" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            {/* Message */}
+            <FormField
+              name="message"
+              control={form.control}
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Textarea placeholder="Сообщение" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+        </div>
 
         {/* Button submit */}
         <ScrollButton text="Обсудить проект" scrollInto="discussion" isSubmit />

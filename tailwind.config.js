@@ -89,6 +89,7 @@ module.exports = {
       },
       backgroundPosition: {
         "right-10rem": "right 10rem center",
+        "right-100": "right 100px center",
       },
       backgroundImage: {
         hero: "url(/hero-bg.png)",

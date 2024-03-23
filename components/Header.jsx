@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 import Logo from "@/components/Logo";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
@@ -10,40 +9,59 @@ import MenuContent from "./MenuContent";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const markerRef = useRef(null);
 
-  function openMenu() {
-    setIsMenuOpen(true);
-  }
+  useEffect(() => {
+    const currMarker = markerRef.current;
 
-  function closeMenu() {
-    setIsMenuOpen(false);
-  }
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsScrolled(!entry.isIntersecting),
+      { threshold: 0 },
+    );
+
+    if (currMarker) observer.observe(currMarker);
+
+    return () => {
+      if (currMarker) observer.unobserve(currMarker);
+    };
+  }, []);
+
+  const openMenu = () => setIsMenuOpen(true);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="fixed top-0 z-30 h-[60px] w-full">
-      <div className="container mx-auto">
-        <div className="flex h-[60px] items-center justify-between">
-          <Logo />
+    <>
+      <div className="h-[1px]" ref={markerRef} />
 
-          {/* Menu */}
-          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-            <SheetTrigger>
-              <Image
-                src="/menu.svg"
-                alt="Menu icon"
-                width={32}
-                height={25}
-                className="cursor-pointer hover:opacity-70"
-                onClick={openMenu}
-              />
-            </SheetTrigger>
+      <header
+        className={`fixed top-0 z-30 h-[60px] w-full xl:h-[100px] ${isScrolled ? "bg-transparent shadow-xl backdrop-blur-[2px]" : ""}`}
+      >
+        <div className="container mx-auto">
+          <div className="flex h-[60px] items-center justify-between xl:h-[100px]">
+            <Logo />
 
-            <SheetContent>
-              <MenuContent onClose={closeMenu} />
-            </SheetContent>
-          </Sheet>
+            {/* Menu */}
+            <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+              <SheetTrigger>
+                <div className="relative size-[32px] xl:size-[50px]">
+                  <Image
+                    src="/menu.svg"
+                    alt="Menu icon"
+                    fill
+                    className="cursor-pointer hover:opacity-70"
+                    onClick={openMenu}
+                  />
+                </div>
+              </SheetTrigger>
+
+              <SheetContent>
+                <MenuContent onClose={closeMenu} />
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 }

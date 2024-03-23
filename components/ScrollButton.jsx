@@ -36,7 +36,7 @@ export default function ScrollButton({
   return (
     <button
       type={isSubmit ? "submit" : "button"}
-      className="group mx-auto flex h-20 items-center font-nunito text-xl uppercase tracking-wide"
+      className="group mx-auto flex h-[80px] items-center font-nunito text-xl uppercase tracking-wide xl:h-[150px]"
       // onClick={!isSubmit && buttonHandler}
       onClick={() => {
         if (!isSubmit) {
@@ -44,16 +44,14 @@ export default function ScrollButton({
         }
       }}
     >
-      <span className="duration-300 ease-in-out group-hover:-translate-x-3 group-hover:text-primary">
+      <span className="duration-300 ease-in-out group-hover:-translate-x-3 group-hover:text-primary xl:text-3xl">
         {text}
       </span>
-      <Image
-        src="/arrow-right-big.svg"
-        alt="Right arrow"
-        width={80}
-        height={80}
-        className="-z-10 -translate-x-4 transition-transform duration-500 ease-in-out group-hover:translate-x-0 group-hover:brightness-[10]"
-      />
+
+      {/* Circle */}
+      <div className="relative -z-10 size-[80px] -translate-x-[16px] transition-transform duration-500 ease-in-out group-hover:translate-x-0 group-hover:brightness-[10] xl:size-[150px] xl:-translate-x-[40px]">
+        <Image src="/arrow-right-big.svg" alt="Right arrow" fill />
+      </div>
     </button>
   );
 }

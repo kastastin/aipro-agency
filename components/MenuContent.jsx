@@ -16,10 +16,13 @@ export default function MenuContent({ onClose }) {
   const arrowStyles = isCollapsibled ? "rotate-180" : "rotate-0";
 
   return (
-    <div className="absolute left-0 top-0 h-svh w-[100vw] bg-black/70">
-      <Logo className="absolute left-4 top-[16px]" onClick={onClose} />
+    <div className="absolute left-0 top-0 h-svh w-[100vw] bg-black/70 md:bg-black/50 xl:bg-black/0">
+      <Logo
+        className="absolute left-4 top-[16px] xl:left-[84px] xl:top-[25px]"
+        onClick={onClose}
+      />
 
-      <ul className="mt-[80px] space-y-[20px] pl-4">
+      <ul className="mt-[80px] space-y-[20px] pl-[16px] xl:mt-[130px] xl:pl-[90px]">
         <li className="menu-list-item inline">
           <Collapsible
             open={isCollapsibled}
@@ -27,7 +30,7 @@ export default function MenuContent({ onClose }) {
             className="inline"
           >
             <span
-              className="relative w-min pr-6"
+              className="menu-link relative w-min pr-6"
               onClick={() => setisCollapsibled(!isCollapsibled)}
             >
               Услуги
@@ -44,7 +47,11 @@ export default function MenuContent({ onClose }) {
               <ul className="flex flex-col items-start space-y-[10px]">
                 {services.map((service, index) => (
                   <li key={index} className="text-base">
-                    <Link href={`${service.path}`} onClick={onClose}>
+                    <Link
+                      href={`${service.path}`}
+                      className="sm:text-xl"
+                      onClick={onClose}
+                    >
                       {service.name}
                     </Link>
                   </li>
@@ -55,17 +62,49 @@ export default function MenuContent({ onClose }) {
         </li>
 
         <li className="menu-list-item w-min">
-          <Link href="https://www.google.com/">Отзывы</Link>
+          <Link href="https://www.google.com/" className="menu-link">
+            Отзывы
+          </Link>
         </li>
 
         <li className="menu-list-item w-min">
-          <Link href="https://www.google.com/">FAQ</Link>
+          <Link href="https://www.google.com/" className="menu-link">
+            FAQ
+          </Link>
         </li>
 
         <li className="menu-list-item w-min">
-          <Link href="https://www.google.com/">Контакты</Link>
+          <Link href="https://www.google.com/" className="menu-link">
+            Контакты
+          </Link>
         </li>
       </ul>
+
+      {/* Background */}
+      {/* <div className="h-full w-full bg-hero bg-contain bg-right bg-no-repeat" /> */}
+      {/* <div className="absolute top-0 -z-10 size-full">
+        <Image
+          src="/hero-bg.png"
+          alt="Background"
+          height={1300}
+          width={1100}
+          layout="responsive"
+          // className="scale-[2]"
+        />
+      </div> */}
+
+      {/* <Image
+        src={service.imageSrc}
+        alt={service.name}
+        width={345}
+        height={195}
+        layout="responsive"
+        className="object-content"
+      /> */}
+
+      {/* <div className="absolute top-0 -z-10 size-full">
+        <Image src="/hero-bg.png" alt="Background" fill />
+      </div> */}
     </div>
   );
 }
