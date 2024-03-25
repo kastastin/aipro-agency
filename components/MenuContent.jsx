@@ -1,13 +1,12 @@
 "use client";
 
-import { Collapsible, CollapsibleContent } from "@radix-ui/react-collapsible";
-
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Collapsible, CollapsibleContent } from "@radix-ui/react-collapsible";
 
 import Logo from "./Logo";
-
+import ScrollButton from "./ScrollButton";
 import { services } from "@/app/service/data";
 
 export default function MenuContent({ onClose }) {
@@ -56,7 +55,7 @@ export default function MenuContent({ onClose }) {
                     <li key={index} className="text-base">
                       <Link
                         href={`${service.path}`}
-                        className="3xl:text-3xl sm:text-xl"
+                        className="sm:text-xl 3xl:text-3xl"
                         onClick={onClose}
                       >
                         {service.name}
@@ -69,21 +68,27 @@ export default function MenuContent({ onClose }) {
           </li>
 
           <li className="menu-list-item w-min">
-            <Link href="https://www.google.com/" className="menu-link">
-              Отзывы
-            </Link>
+            <ScrollButton scrollInto="reviews" variant="link">
+              <span className="menu-link" onClick={onClose}>
+                Отзывы
+              </span>
+            </ScrollButton>
           </li>
 
           <li className="menu-list-item w-min">
-            <Link href="https://www.google.com/" className="menu-link">
-              FAQ
-            </Link>
+            <ScrollButton scrollInto="faq" variant="link">
+              <span className="menu-link" onClick={onClose}>
+                FAQ
+              </span>
+            </ScrollButton>
           </li>
 
           <li className="menu-list-item w-min">
-            <Link href="https://www.google.com/" className="menu-link">
-              Контакты
-            </Link>
+            <ScrollButton scrollInto="footer" variant="link">
+              <span className="menu-link" onClick={onClose}>
+                Контакты
+              </span>
+            </ScrollButton>
           </li>
         </ul>
       </div>

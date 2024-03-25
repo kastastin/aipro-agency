@@ -7,12 +7,17 @@ export default function ScrollButton({
   scrollInto: sectionId,
   variant,
   isSubmit,
+  children,
 }) {
   function buttonHandler() {
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
       sectionElement.scrollIntoView({ behavior: "smooth" });
     }
+  }
+
+  if (variant === "link") {
+    return <button onClick={buttonHandler}>{children}</button>;
   }
 
   if (variant === "secondary") {

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function ServicesSection() {
   return (
-    <section className="pb-[100px] pt-[50px] xl:pt-0">
+    <section id='services' className="overflow-hidden pb-[100px] pt-[50px] xl:pt-0">
       <div className="container mx-auto">
         {/* Grid */}
         <div className="grid lg:grid-cols-[40%_60%] lg:gap-x-[175px]">
@@ -13,18 +13,20 @@ export default function ServicesSection() {
             <h2 className="mb-[30px] text-xs sm:text-sm xl:mt-[90px]">
               Все цифровые услуги в одном месте
             </h2>
+
+            {/* List of services */}
             <ul className="flex flex-col gap-y-[20px] lg:gap-y-[30px]">
               {services.map((service, index) => (
                 <li
                   key={index}
-                  className="group relative text-xl uppercase opacity-40 transition-all duration-300 ease-in-out hover:pl-[40px] hover:opacity-100 lg:text-2xl"
+                  className="group relative text-xl uppercase opacity-40 transition-all duration-300 ease-in-out xs:hover:pl-[40px] hover:opacity-100 lg:text-2xl"
                 >
                   <Image
                     src="/arrow-right.svg"
                     alt="Right arrow"
                     width={33}
                     height={20}
-                    className="absolute -left-[500px] top-[3px] group-hover:left-[2px]"
+                    className="absolute -left-[500px] top-[3px] hidden group-hover:left-[2px] xs:block"
                   />
                   <Link href={`${service.path}`}>{service.name}</Link>
                 </li>

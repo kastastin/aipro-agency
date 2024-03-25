@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import ScrollButton from "./ScrollButton";
+
 export default function Footer() {
   return (
-    <footer className="py-[20px] xl:pb-[50px] xl:pt-[70px]">
+    <footer id="footer" className="py-[20px] xl:pb-[50px] xl:pt-[70px]">
       <div className="container mx-auto">
         {/* Grid */}
         <div className="grid xl:grid-cols-[1fr_444px]">
@@ -76,19 +78,23 @@ export default function Footer() {
           {/* Pages */}
           <ul className="xl:place-center col-span-full mx-auto flex w-full justify-between py-[50px] sm:w-[60%] xl:col-start-1 xl:w-[460px] xl:py-[80px]">
             <li>
-              <Link href="#" className="text-2xl uppercase hover:underline">
-                Услуги
-              </Link>
+              <ScrollButton scrollInto="services" variant="link">
+                <span className="text-2xl uppercase hover:underline">
+                  Услуги
+                </span>
+              </ScrollButton>
             </li>
             <li>
-              <Link href="#" className="text-2xl uppercase hover:underline">
-                FAQ
-              </Link>
+              <ScrollButton scrollInto="faq" variant="link">
+                <span className="text-2xl uppercase hover:underline">FAQ</span>
+              </ScrollButton>
             </li>
             <li>
-              <Link href="#" className="text-2xl uppercase hover:underline">
-                Отзывы
-              </Link>
+              <ScrollButton scrollInto="reviews" variant="link">
+                <span className="text-2xl uppercase hover:underline">
+                  Отзывы
+                </span>
+              </ScrollButton>
             </li>
           </ul>
 
@@ -103,9 +109,7 @@ export default function Footer() {
           <span className="text-mini cursor-pointer hover:underline">
             Политика конфиденциальности
           </span>
-          <span className="text-mini cursor-pointer hover:underline">
-            Копирайтинг 2024
-          </span>
+          <span className="text-mini">© AiPro 2024</span>
         </div>
       </div>
     </footer>
