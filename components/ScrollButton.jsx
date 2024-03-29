@@ -23,7 +23,7 @@ export default function ScrollButton({
   if (variant === "secondary") {
     return (
       <button
-        className="group flex gap-x-4 border-b border-secondary pb-1 font-nunito text-xl uppercase tracking-wide text-secondary transition-colors duration-300 ease-in-out hover:border-primary hover:text-primary"
+        className="group flex gap-x-4 border-b border-secondary pb-1 font-nunito text-xl uppercase tracking-wide text-secondary transition-all duration-300 ease-in-out hover:border-primary hover:pr-[8px] hover:text-primary"
         onClick={buttonHandler}
       >
         {text}
@@ -32,7 +32,7 @@ export default function ScrollButton({
           alt="Right arrow"
           width={33}
           height={20}
-          className="translate-y-[2px] transition-transform duration-500 ease-in-out group-hover:rotate-180 group-hover:brightness-[10]"
+          className="translate-y-[2px] transition-transform duration-500 ease-in-out group-hover:translate-x-2 group-hover:brightness-[10]"
         />
       </button>
     );

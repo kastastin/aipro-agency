@@ -40,7 +40,7 @@
 @media (min-width: 768px) {
   .embla {
     margin: initial;
-    max-width: 100%;
+    max-width: 100vw;
     --slide-height: 320px;
     --slide-spacing: 20px;
     --slide-size: 60%;
@@ -48,7 +48,7 @@
 
   .embla__viewport {
     height: initial;
-    /* width: 100vw; */
+    width: 100vw;
     position: initial;
     border-bottom-left-radius: initial;
     border-bottom-right-radius: initial;
@@ -56,7 +56,6 @@
 
   .embla__container {
     height: initial;
-    /* width: 100%; */
     flex-direction: initial;
     touch-action: pan-y;
     margin-top: initial;
@@ -64,11 +63,18 @@
   }
 
   .embla__slide {
-    /* width: 70%; */
     min-height: initial;
     min-width: 0;
     padding-top: initial;
     padding-left: var(--slide-spacing);
+  }
+
+  .embla__slide:first-child {
+    margin-left: 3rem;
+  }
+
+  .embla__slide:last-child {
+    margin-right: 3rem;
   }
 
   /* Dots navigation */

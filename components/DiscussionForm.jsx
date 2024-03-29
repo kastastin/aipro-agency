@@ -73,8 +73,22 @@ export default function DiscussionForm() {
   );
 
   const handleCheckboxChange = (index) => (checked) => {
-    const newCheckboxStates = [...checkboxStates];
-    newCheckboxStates[index] = checked;
+    let newCheckboxStates = [...checkboxStates];
+
+    if (index === 0) {
+      newCheckboxStates = newCheckboxStates.map(() => checked);
+    } else {
+      newCheckboxStates[index] = checked;
+
+      if (checkboxStates.every((state) => state)) {
+        newCheckboxStates[0] = false;
+      }
+
+      if (newCheckboxStates.slice(1).every((state) => state)) {
+        newCheckboxStates[0] = true;
+      }
+    }
+
     setCheckboxStates(newCheckboxStates);
   };
 

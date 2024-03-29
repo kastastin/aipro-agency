@@ -14,14 +14,14 @@ export default function PricingSection() {
               Ценообразование
             </h2>
 
-            <p className="p mb-[50px] lg:text-sm 2xl:text-xl">
+            <p className="p mb-[50px]">
               AiPro решает задачи разной сложности и на разных временных
               промежутках. И чтобы вы могли эффективно инвестировать свои
               средства в решение вашей проблемы, AiPro разрабатывает
               индивидуальные коммерческие предложения под каждый проект.
             </p>
 
-            <p className="p mb-[50px] font-semibold lg:mb-[20px] lg:text-sm 2xl:mb-[50px] 2xl:text-lg">
+            <p className="p mb-[50px] font-semibold lg:mb-[20px] 2xl:mb-[50px]">
               Расскажите о своих потребностях, и AiPro Agency предложит вам
               индивидуальное решение, соответствующее вашему проекту.
             </p>

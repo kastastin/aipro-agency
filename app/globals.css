@@ -51,7 +51,7 @@
 }
 
 .h1 {
-  @apply xs:text-[35px] xs:leading-[45px] font-roboto text-[40px] font-black uppercase leading-[40px] tracking-wider sm:text-[50px] sm:leading-[50px] xl:text-[100px] xl:leading-[120px];
+  @apply xs:text-[35px] xs:leading-[45px] font-roboto text-[40px] font-black uppercase leading-[40px] tracking-wider sm:text-[50px] sm:leading-[50px] xl:text-[100px] xl:leading-[90px];
 }
 
 .h2 {

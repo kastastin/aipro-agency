@@ -17,7 +17,7 @@ export default function ServiceSection({ service }) {
             <ul className="my-[50px] space-y-[20px] xl:mb-0 xl:mt-[100px]">
               {service.types.map((type, index) => (
                 <li key={index}>
-                  <span className="text-xl lg:text-2xl xl:text-4xl">
+                  <span className="text-xl lg:text-2xl 2xl:text-4xl">
                     {type}
                   </span>
                 </li>
@@ -48,8 +48,6 @@ export default function ServiceSection({ service }) {
                 <Image src="/services/stone-bottom.png" alt="Stone" fill />
               </div>
             </div>
-
-            <p className="p xl:mb-0">{service.conclusion}</p>
           </div>
         </div>
       </div>

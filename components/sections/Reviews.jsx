@@ -9,10 +9,10 @@ export default function ReviewsSection() {
           воспользовался услугами{" "}
           <span className="text-primary">AiPro Agency</span>
         </h2>
-
-        {/* Carousel */}
-        <Carousel />
       </div>
+
+      {/* Carousel */}
+      <Carousel />
     </section>
   );
 }

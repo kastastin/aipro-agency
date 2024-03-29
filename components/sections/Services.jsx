@@ -1,11 +1,19 @@
+'use client'
+
+import { useState } from "react";
 import Link from "next/link";
 
 import { services } from "@/app/service/data";
 import Image from "next/image";
 
 export default function ServicesSection() {
+  const [selectedService, setSelectedService] = useState(services[0]);
+  
   return (
-    <section id='services' className="overflow-hidden pb-[100px] pt-[50px] xl:pt-0">
+    <section
+      id="services"
+      className="overflow-hidden pb-[100px] pt-[50px] xl:pt-0"
+    >
       <div className="container mx-auto">
         {/* Grid */}
         <div className="grid lg:grid-cols-[40%_60%] lg:gap-x-[175px]">
@@ -19,7 +27,8 @@ export default function ServicesSection() {
               {services.map((service, index) => (
                 <li
                   key={index}
-                  className="group relative text-xl uppercase opacity-40 transition-all duration-300 ease-in-out xs:hover:pl-[40px] hover:opacity-100 lg:text-2xl"
+                  className="group relative text-xl uppercase opacity-40 transition-all duration-300 ease-in-out hover:opacity-100 xs:hover:pl-[40px] lg:text-2xl"
+                  onMouseEnter={() => setSelectedService(service)}
                 >
                   <Image
                     src="/arrow-right.svg"
@@ -37,10 +46,10 @@ export default function ServicesSection() {
           {/* Section image */}
           <div className="relative max-lg:hidden">
             <Image
-              src="/service.jpg"
-              alt="Laptop with code"
-              width={952}
-              height={900}
+              src={selectedService.imageSrc}
+              alt={selectedService.name}
+              width={345}
+              height={195}
               layout="responsive"
               className="object-content"
             />
