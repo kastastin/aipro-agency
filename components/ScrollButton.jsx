@@ -41,7 +41,7 @@ export default function ScrollButton({
   return (
     <button
       type={isSubmit ? "submit" : "button"}
-      className="group mx-auto flex h-[80px] items-center font-nunito text-xl uppercase tracking-wide xl:h-[150px]"
+      className="group mx-auto flex h-[80px] items-center font-nunito text-xl uppercase tracking-wide xl:h-[150px] animate-pulse"
       onClick={() => {
         if (!isSubmit) {
           buttonHandler();

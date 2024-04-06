@@ -38,7 +38,7 @@ export const services = [
     description:
       "Создание и управление базами данных любой сложности — наш профиль. AiPro Agency обеспечивает надежность и безопасность хранения данных, что является ключом к успешной работе вашего бизнеса.",
     types: ["MySql", "Postgresql", "OracleSql"],
-    imageSrc: "/services/databases.jpg",
+    imageSrc: "/services/databases.png",
   },
   {
     name: "Виртуальные Хитмейкеры",
@@ -52,7 +52,7 @@ export const services = [
       "Продвижение в Youtube Shorts",
       "Инфлюенс маркетинг",
     ],
-    imageSrc: "/services/virtual-hitmakers.jpg",
+    imageSrc: "/services/virtual-hitmakers.png",
   },
   {
     name: "SEO Оптимизация",
@@ -66,7 +66,7 @@ export const services = [
       "Продвижения по действиям",
       "Продвижение по консалтингу",
     ],
-    imageSrc: "/services/seo-optimization.jpg",
+    imageSrc: "/services/seo-optimization.png",
   },
   {
     name: "Рекламные Кампании",

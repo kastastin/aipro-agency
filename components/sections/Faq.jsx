@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import RevealTitle from "@/components/animations/RevealTitle";
 
 const faqs = [
   {
@@ -51,11 +52,13 @@ export default function FaqSection() {
   const secondHalf = faqs.slice(half, faqs.length);
 
   return (
-    <section id='faq' className="relative overflow-hidden pb-[80px] pt-[50px]">
+    <section id="faq" className="relative overflow-hidden pb-[80px] pt-[50px]">
       <div className="container mx-auto">
-        <h2 className="h2 w-[310px] md:w-[390px] lg:w-[70%] xl:w-[55%]">
-          <span className="text-primary">Частые вопросы</span> к AiPro
-        </h2>
+        <RevealTitle>
+          <h2 className="h2 w-[310px] md:w-[390px] lg:w-[70%] xl:w-[55%]">
+            <span className="text-primary">Частые вопросы</span> к AiPro
+          </h2>
+        </RevealTitle>
 
         <div className="flex flex-wrap justify-between">
           <div className="w-full lg:w-[45%]">
@@ -96,7 +99,7 @@ export default function FaqSection() {
           alt="Blured stone"
           width={220}
           height={200}
-          className="absolute -right-[60px] top-[350px] -z-10"
+          className="absolute -right-[60px] top-[350px] -z-10 lg:top-[250px]"
         />
 
         {/* Bottom stone */}
@@ -105,7 +108,7 @@ export default function FaqSection() {
           alt="Stone"
           width={50}
           height={75}
-          className="absolute bottom-[55px] right-[15px] -z-10 rotate-[40deg]"
+          className="absolute bottom-[55px] right-[15px] -z-10 rotate-[40deg] lg:right-[65px] lg:top-[500px]"
         />
       </div>
     </section>

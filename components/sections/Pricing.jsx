@@ -1,6 +1,8 @@
 import Image from "next/image";
 
 import ScrollButton from "../ScrollButton";
+import RevealTitle from "@/components/animations/RevealTitle";
+import RevealChars from "@/components/animations/RevealChars";
 
 export default function PricingSection() {
   return (
@@ -10,20 +12,18 @@ export default function PricingSection() {
         <div className="grid lg:grid-cols-[43.75%_43.75%] lg:gap-x-[12.5%]">
           {/* Left column */}
           <div className="lg:mt-[35px]">
-            <h2 className="h2 mb-[50px] text-center sm:text-left lg:text-4xl 2xl:text-5xl">
-              Ценообразование
-            </h2>
+            <RevealTitle>
+              <h2 className="h2 mb-[50px] text-center sm:text-left lg:text-4xl 2xl:text-5xl">
+                Ценообразование
+              </h2>
+            </RevealTitle>
 
             <p className="p mb-[50px]">
-              AiPro решает задачи разной сложности и на разных временных
-              промежутках. И чтобы вы могли эффективно инвестировать свои
-              средства в решение вашей проблемы, AiPro разрабатывает
-              индивидуальные коммерческие предложения под каждый проект.
+              <RevealChars sentence="AiPro решает задачи разной сложности и на разных временных промежутках. И чтобы вы могли эффективно инвестировать свои средства в решение вашей проблемы, AiPro разрабатывает индивидуальные коммерческие предложения под каждый проект." />
             </p>
 
             <p className="p mb-[50px] font-semibold lg:mb-[20px] 2xl:mb-[50px]">
-              Расскажите о своих потребностях, и AiPro Agency предложит вам
-              индивидуальное решение, соответствующее вашему проекту.
+              <RevealChars sentence="Расскажите о своих потребностях, и AiPro Agency предложит вам индивидуальное решение, соответствующее вашему проекту." />
             </p>
 
             <ScrollButton

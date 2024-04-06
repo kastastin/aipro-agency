@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import RevealChars from "@/components/animations/RevealChars";
+
 export default function ServiceSection({ service }) {
   return (
     // <section className="overflow-hidden py-[85px] xl:py-[150px]">
@@ -11,7 +13,9 @@ export default function ServiceSection({ service }) {
         <div className="grid gap-x-[100px] xl:grid-cols-2">
           {/* Left column */}
           <div>
-            <p className="p">{service.description}</p>
+            <p className="p">
+              <RevealChars sentence={service.description} />
+            </p>
 
             {/* Types */}
             <ul className="my-[50px] space-y-[20px] xl:mb-0 xl:mt-[100px]">
