@@ -74,7 +74,7 @@ export const services = [
     value: "advertising-campaigns",
     description:
       "AiPro Agency специализируется на комплексном управлении рекламными кампаниями в социальных сетях, будь то Facebook, Instagram, а также на поисковых платформах, включая Google, с учетом контекстной и YouTube-рекламы. AiPro Agency предлагает полный цикл маркетинговых решений, где каждый элемент стратегии разрабатывается с учетом потребностей вашего бизнеса.",
-    types: ["Таргетированная реклама", "Google реклама"],
+    types: ["Мета ADS", "Google ADS"],
     imageSrc: "/services/advertising-campaigns.jpg",
   },
 ];
